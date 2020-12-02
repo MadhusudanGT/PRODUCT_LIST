@@ -41,16 +41,18 @@ class Incre extends React.Component {
           variant="contained"
           color="primary"
           onClick={this.DecreaseItem}
+          style={{width:"10px" ,height:"20px"}}
         >
           -
         </Button>
-        <input  style={{width:"60px"}} value={this.state.quantity} />
+        <input  style={{width:"30px"}} value={this.state.quantity} />
       
         <Button
           onClick={this.IncrementItem}
           size="small"
           variant="contained"
           color="primary"
+          style={{width:"20px" ,height:"20px"}}
         >
           +
         </Button>
