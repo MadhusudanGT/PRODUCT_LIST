@@ -23,7 +23,8 @@ export default class ProductList extends React.Component{
       showbutton: false,
       showbutton1: false,
       showButtonIndex: null,
-      image: []
+      image: [],
+      showResults:false
     };
     this.handleEdit = this.handleEdit.bind(this);
   }
@@ -33,7 +34,8 @@ export default class ProductList extends React.Component{
     console.log(this.state.id);
     this.setState({
       showButtonIndex: parameter,
-      showbutton1: true
+      showbutton1: true,
+       showResults: true 
     });
     if (parameter === 0) {
       this.setState({
@@ -126,16 +128,32 @@ render(){
 
                                     {/* {showbutton2 && (showButtonIndex === data.product_stock)  && <Buttons/>}  */}
 
-                                    <Button
+                                    {/* <Button
                                       id={key.product_stock}
                                       onClick={(e) =>
                                         this.handleEdit(elem.product_stock)
                                       }
                                       variant="contained"
                                       color="primary"
+                                      style={{width:"70px" ,height:"30px"}}
                                     >
                                       Add
-                                    </Button>
+                                    </Button> */}
+
+                                    { this.state.showResults&&
+                                      showButtonIndex ===
+                                        elem.product_stock ? 
+                                 null :    <Button
+                                 id={key.product_stock}
+                                 onClick={(e) =>
+                                   this.handleEdit(elem.product_stock)
+                                 }
+                                 variant="contained"
+                                 color="primary"
+                                 style={{width:"70px" ,height:"30px"}}
+                               >
+                                 Add
+                               </Button> }
                                   </Button>
                                 </Typography>
                               </Grid>
