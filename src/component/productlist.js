@@ -6,7 +6,7 @@ import Paper from "@material-ui/core/Paper";
 import Incre from "./incre";
 import Edit from "./Edit";
 import { Image } from "semantic-ui-react";
-import { Grid, Card, CardContent, Typography } from "@material-ui/core/";
+import { Grid, Typography } from "@material-ui/core/";
 
 export default class ProductList extends React.Component {
   constructor(props) {
@@ -69,8 +69,6 @@ export default class ProductList extends React.Component {
         >
           {stockData.map((elem, key) => (
             <Grid item xs={12} sm={6} md={3} key={this.data.indexOf(elem)}>
-              <Card>
-                <CardContent>
                   <Typography variant="h5" gutterBottom>
                     <div key={key}>
                       <div className="root">
@@ -122,11 +120,11 @@ export default class ProductList extends React.Component {
                                     <Button>
                                       {showbutton1 &&
                                         showButtonIndex ===
-                                          elem.product_stock && <Incre />}
+                                          elem.product_stock && <Incre  valueFromProduct={this.state.id} />}
 
                                       {showbutton &&
                                         showButtonIndex ===
-                                          elem.product_stock && <Edit />}
+                                          elem.product_stock && <Edit/>}
 
                                       {/* {showbutton2 && (showButtonIndex === data.product_stock)  && <Buttons/>}  */}
 
@@ -158,8 +156,6 @@ export default class ProductList extends React.Component {
                       </div>
                     </div>
                   </Typography>
-                </CardContent>
-              </Card>
             </Grid>
           ))}
         </Grid>

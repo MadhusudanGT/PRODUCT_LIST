@@ -9,12 +9,13 @@ class Incre extends React.Component {
       quantity: 1,
       show: true,
       max: 5,
-      min: 0
+      min: 0,
+      productstock:null
     };
   }
 
   IncrementItem = () => {
-    if (this.state.quantity >= 5) {
+    if (this.state.quantity >= this.state.productstock) {
     } else {
       this.setState({
         quantity: this.state.quantity + 1
@@ -32,6 +33,11 @@ class Incre extends React.Component {
   ToggleClick = () => {
     this.setState({ show: !this.state.show });
   };
+
+  componentDidMount(){
+  this.setState({productstock:this.props.valueFromProduct})
+  console.log(this.state.productstock)
+  }
 
   render() {
     return (
