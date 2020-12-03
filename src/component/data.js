@@ -7,7 +7,7 @@ export const stockData = [
     "product_price": 50,
     "product_weight": 1,
     "product_stock": 3,
-    "product_pic": require("./assert/onion.jpg")
+    "product_pic": require("./assert/onioin1.png")
   },
   {
     "product_name": "GINGER",
